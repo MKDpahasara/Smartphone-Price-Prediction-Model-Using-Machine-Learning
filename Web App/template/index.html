@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Smart Phones Price Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Smart phones Price Predictor</div>
+        <form action="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="Brand">Brand</label>
+                    <div class = "custom_select">
+                        <select name="Brand" id="Brand">
+                            <option value="" selected hidden>Select</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Xiaomi">Xiaomi</option>
+                            <option value="Oppo">Oppo</option>
+                            <option value="Realme">Realme</option>
+                            <option value="Vivo">Vivo</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Nokia">Nokia</option>
+                            <option value="Motorola">Motorola</option>
+                            <option value="OnePlus">OnePlus</option>
+                            <option value="Huawei">Huawei</option>
+                            <option value="Google">Google</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+                    <div class="inputfield">
+                        <label for="ram">Ram(GB)</label>
+                        <input class="input" type="text" name="ram" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="Storage">Storage(GB)</label>
+                        <input class="input" type="text" name="Storage" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="Screen Size">Screen Size (Inch)</label>
+                        <input class="input" type="text" name="Screen Size" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="main_camera(MP)">Main Camera(MP)</label>
+                        <input class="input" type="text" name="main_camera(MP)" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="Battery Capacity">Battery Capacity (mah)</label>
+                        <input class="input" type="text" name="Battery Capacity" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="rear cameras count">Rear Cameras Count</label>
+                        <div class = "custom_select">
+                            <select name="rear cameras count" id="camera_count">
+                                <option value="" selected hidden>Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="inputfield">
+                            <input class="btn" type="submit" value="Precict Price">
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </form>
+
+        <div class="result">
+            {% if pred != 0 %}
+            <p>Estimated Price : LKR {{pred}}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
